@@ -15,7 +15,7 @@ const dataFromBackendForUser= fetch('https://5fc1a1c9cb4d020016fe6b07.mockapi.io
                 data.forEach(value => {
                    
                 
-                    temp +=`<tr>`;
+                    temp +="<tr class="+"table-row"+">";
                     temp +="<td>"+value.id+"</td>";
                     temp +="<td>"+"<img src="+value.profilePic+">"+"</td>";
                     

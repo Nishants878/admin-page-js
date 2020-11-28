@@ -55,20 +55,30 @@
     </main>
     <script>
         const searchFun = ()=>{
+           
             let filter = document.getElementById("myInput").value.toUpperCase();
-            let myTable = document.getElementById("userList");
-            let tr = myTable.getElementsByTagName('tr');
+            let alla=document.getElementsByClassName("table-row")
 
-            for(var i=0; i<tr.length; i++){
-                let td = tr[i].getElementsByTagName('td')[2];
-                if(td){
-                    let textValue = td.textContent || td.innerHTML;
-                    if(textValue.toUpperCase().indexOf(filter) > 0){
-                        tr[1].style.display = "";
-                    }else{
-                        tr[i].style.display="none";
-                    }
+            if (filter.length >1){
+                for(var i=0; i<alla.length; i++){
+                let nameC = alla[i].children[2].innerText.toUpperCase()
+                if (nameC.includes(filter)){
+                    alla[i].style.display=""
+
                 }
+                else{
+                    alla[i].style.display="none"
+                }
+            }
+            }
+            else{
+                for(var i=0; i<alla.length; i++){
+                let nameC = alla[i].children[2].innerText.toUpperCase()
+                
+                    alla[i].style.display="";
+                    // alert("kindly give 2 characters")
+            }
+
             }
 
         }
